@@ -1,10 +1,10 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import posts from "./routes/posts.js";
-import logger from "./middleware/logger.js";
-import errorHandler from "./middleware/error.js";
-import pageNotFound from "./middleware/notFound.js";
+import posts from "./src/routes/posts.js";
+import logger from "./src/middlewares/logger.js";
+import errorHandler from "./src/middlewares/error.js";
+import pageNotFound from "./src/middlewares/notFound.js";
 
 const port = process.env.PORT || 3000;
 
