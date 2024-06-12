@@ -4,7 +4,6 @@
 //   { id: 3, title: "post three" },
 // ];
 
-import { ConnectionReadyEvent } from "mongodb";
 import db from "../db/connections.js";
 
 // @desc Get all post

@@ -5,9 +5,8 @@ import posts from "./routes/posts.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/error.js";
 import pageNotFound from "./middleware/notFound.js";
-import connectDB from "./db/connections.js";
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
