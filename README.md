@@ -66,22 +66,22 @@ learning-express/\
 │ └── script.js\
 │\
 ├── src/\
-│ ├── controllers/
-│ │ └── postController.js
-│ ├── middlewares/
-│ │ ├── error.js
-│ │ ├── logger.js
-│ │ └── notFound.js
-│ ├── routes/
-│ │ └── posts.js
-│ ├── db/
-│ │ └── connection.js
-│ └── app.js
-│
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
+│ ├── controllers/\
+│ │ └── postController.js\
+│ ├── middlewares/\
+│ │ ├── error.js\
+│ │ ├── logger.js\
+│ │ └── notFound.js\
+│ ├── routes/\
+│ │ └── posts.js\
+│ ├── db/\
+│ │ └── connection.js\
+│ └── app.js\
+│\
+├── .env\
+├── .gitignore\
+├── package.json\
+└── README.md\
 
 ## API Endpoints
 
