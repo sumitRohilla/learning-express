@@ -4,8 +4,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node app",
-    "dev": "node --watch --env-file=.env app"
+    "start": "node index",
+    "dev": "node --watch --env-file=.env index"
   },
   "keywords": [],
   "author": "",
