@@ -6,7 +6,7 @@ import logger from "./src/middlewares/logger.js";
 import errorHandler from "./src/middlewares/error.js";
 import pageNotFound from "./src/middlewares/notFound.js";
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || "";
 
 const app = express();
 
