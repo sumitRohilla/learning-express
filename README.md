@@ -59,29 +59,29 @@ This is a simple Express server designed for learning purposes. It serves static
 
 ## Project Structure
 
-learning-express/
-│
-├── public/
-│ ├── index.html
-│ └── script.js
-│
-├── src/
-│ ├── controllers/
-│ │ └── postController.js
-│ ├── middlewares/
-│ │ ├── error.js
-│ │ ├── logger.js
-│ │ └── notFound.js
-│ ├── routes/
-│ │ └── posts.js
-│ ├── db/
-│ │ └── connection.js
-│ └── app.js
-│
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
+learning-express/\
+│\
+├── public/\
+│ ├── index.html\
+│ └── script.js\
+│\
+├── src/\
+│ ├── controllers/\
+│ │ └── postController.js\
+│ ├── middlewares/\
+│ │ ├── error.js\
+│ │ ├── logger.js\
+│ │ └── notFound.js\
+│ ├── routes/\
+│ │ └── posts.js\
+│ ├── db/\
+│ │ └── connection.js\
+│ └── app.js\
+│\
+├── .env\
+├── .gitignore\
+├── package.json\
+└── README.md\
 
 ## API Endpoints
 
@@ -117,7 +117,7 @@ learning-express/
 
 #### PUT /api/posts/:id
 
-- Description: Update post
+- Description: Update a post
 - Request Body:
   ```json
   {
@@ -131,10 +131,9 @@ learning-express/
       "id": "2",
       "name": "New post"
   }
-
+  ```
 
   #### DELETE /api/posts/:id
-  ```
 
 - Description: Delete a post
 - Request Body:
