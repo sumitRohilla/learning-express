@@ -13,20 +13,19 @@ const signal = controller.signal;
 
 // GET all Post
 const fetchPosts = async () => {
+  container.innerHTML = "";
+  let ele = document.createElement("div");
+
   try {
     const response = await fetch("/api/posts", signal);
-
-    console.log("all get");
 
     if (!response.ok) {
       throw new Error("Error fetching Posts!!");
     }
     const posts = await response.json();
 
-    container.innerHTML = "";
-
     posts.map((post) => {
-      const ele = document.createElement("div");
+      ele = document.createElement("div");
       ele.textContent = post.title;
       container.appendChild(ele);
     });
@@ -35,32 +34,35 @@ const fetchPosts = async () => {
       console.log("Aborted fetching data!!");
     } else {
       console.log(`Error occured : ${e.message}`);
+      ele.textContent = e.message;
+      container.appendChild(ele);
     }
   }
 };
 
 //GET single Post
 const fetchPost = async (id) => {
+  container.innerHTML = "";
+  const ele = document.createElement("div");
+
   try {
     const response = await fetch(`/api/posts/${id}`, signal);
 
-    console.log("single get");
-
     if (!response.ok) {
-      throw new Error("Error fetching Posts!!");
+      const err = await response.json();
+      throw new Error(err.message);
     }
     const post = await response.json();
 
-    container.innerHTML = "";
-
-    const ele = document.createElement("div");
     ele.textContent = post.title;
     container.appendChild(ele);
   } catch (e) {
     if (e.name == "AbortError") {
       console.log("Aborted fetching data!!");
     } else {
-      console.log(`Error occured : ${e.message}`);
+      console.log(e.message);
+      ele.textContent = e;
+      container.appendChild(ele);
     }
   }
 };
@@ -68,6 +70,9 @@ const fetchPost = async (id) => {
 //POST data
 
 const addPost = async (title) => {
+  container.innerHTML = "";
+  const ele = document.createElement("div");
+
   try {
     console.log(JSON.stringify({ title }));
     const response = await fetch("/api/posts", {
@@ -80,14 +85,12 @@ const addPost = async (title) => {
     });
 
     if (!response.ok) {
-      throw new Error("Error fetching Posts!!");
+      const err = await response.json();
+      throw new Error(err.message);
     }
     const posts = await response.json();
 
-    container.innerHTML = "";
-
     posts.map((post) => {
-      const ele = document.createElement("div");
       ele.textContent = post.title;
       container.appendChild(ele);
     });
@@ -95,7 +98,9 @@ const addPost = async (title) => {
     if (e.name == "AbortError") {
       console.log("Aborted fetching data!!");
     } else {
-      console.log(`Error occured : ${e.message}`);
+      console.log(e.message);
+      ele.textContent = e;
+      container.appendChild(ele);
     }
   }
 };
@@ -103,6 +108,9 @@ const addPost = async (title) => {
 //Update data
 
 const updatePost = async (id, title) => {
+  container.innerHTML = "";
+  const ele = document.createElement("div");
+
   try {
     const response = await fetch(`/api/posts/${id}`, {
       method: "PUT",
@@ -114,14 +122,12 @@ const updatePost = async (id, title) => {
     });
 
     if (!response.ok) {
-      throw new Error("Error fetching Posts!!");
+      const err = await response.json();
+      throw new Error(err.message);
     }
     const posts = await response.json();
 
-    container.innerHTML = "";
-
     posts.map((post) => {
-      const ele = document.createElement("div");
       ele.textContent = post.title;
       container.appendChild(ele);
     });
@@ -129,7 +135,9 @@ const updatePost = async (id, title) => {
     if (e.name == "AbortError") {
       console.log("Aborted fetching data!!");
     } else {
-      console.log(`Error occured : ${e.message}`);
+      console.log(e.message);
+      ele.textContent = e;
+      container.appendChild(ele);
     }
   }
 };
@@ -137,6 +145,9 @@ const updatePost = async (id, title) => {
 //delete data
 
 const deletePost = async (id) => {
+  container.innerHTML = "";
+  const ele = document.createElement("div");
+
   try {
     const response = await fetch(`/api/posts/${id}`, {
       method: "DELETE",
@@ -144,14 +155,12 @@ const deletePost = async (id) => {
     });
 
     if (!response.ok) {
-      throw new Error("Error fetching Posts!!");
+      const err = await response.json();
+      throw new Error(err.message);
     }
     const posts = await response.json();
 
-    container.innerHTML = "";
-
     posts.map((post) => {
-      const ele = document.createElement("div");
       ele.textContent = post.title;
       container.appendChild(ele);
     });
@@ -159,7 +168,9 @@ const deletePost = async (id) => {
     if (e.name == "AbortError") {
       console.log("Aborted fetching data!!");
     } else {
-      console.log(`Error occured : ${e.message}`);
+      console.log(e.message);
+      ele.textContent = e;
+      container.appendChild(ele);
     }
   }
 };

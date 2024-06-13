@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node index",
-    "dev": "node --watch --env-file=.env index"
+    "dev": "set \"GENERATE_SOURCEMAP=false\" && node --watch --env-file=.env index"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongodb": "^6.7.0"
   }
